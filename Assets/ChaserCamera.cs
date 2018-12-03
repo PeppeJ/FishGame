@@ -15,17 +15,22 @@ public class ChaserCamera : MonoBehaviour
 
     public Vector3 CameraPosition
     {
-        get { return transform.position + offset; }
+        get { return transform.position - offset; }
         set { transform.position = value + offset; }
+    }
+
+    private void Awake()
+    {
+        camera = Camera.main;
     }
 
     private void Start()
     {
-        offset = target.position - transform.position;
+        offset = new Vector3(0, 0, transform.position.z);
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (target != null)
         {
@@ -48,7 +53,6 @@ public class ChaserCamera : MonoBehaviour
                 return Mathf.Pow(2, distance) * Time.deltaTime;
             default:
                 return 0;
-                break;
         }
     }
 }
