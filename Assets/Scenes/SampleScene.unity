@@ -197,7 +197,7 @@ MonoBehaviour:
   m_RefResolutionX: 1280
   m_RefResolutionY: 720
   m_UpscaleRT: 0
-  m_PixelSnapping: 0
+  m_PixelSnapping: 1
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
@@ -248,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.95, y: -1.48, z: -10}
+  m_LocalPosition: {x: 5.9, y: 2.56, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1461679992}
-  chase: 2
+  chase: 1
   speed: 1
 --- !u!1 &663397655
 GameObject:
@@ -5061,7 +5061,7 @@ CompositeCollider2D:
       - {x: -20, y: -4.0703125}
       - {x: -20, y: -12}
       - {x: 29, y: -12}
-  m_VertexDistance: 0.0005
+  m_VertexDistance: 0.05
 --- !u!50 &1272952630
 Rigidbody2D:
   serializedVersion: 4
@@ -5624,7 +5624,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1461679989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.74, y: -1.14, z: 0}
+  m_LocalPosition: {x: 7.463, y: 0.442, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5641,10 +5641,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1426a00aa2fbb45b668fdc1476c510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 24
-  deceleration: 64
-  dashSpeed: 24
-  maxSpeed: 8
+  acceleration: 8
+  deceleration: 8
+  dashSpeed: 12
+  maxSpeed: 12
   rotationSpeed: 720
 --- !u!50 &1461679994
 Rigidbody2D:

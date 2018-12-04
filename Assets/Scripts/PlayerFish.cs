@@ -8,7 +8,6 @@ public class PlayerFish : FishMovementBase
 
     protected override void UpdateTargetDirection()
     {
-        Time.timeScale = 1f;
         targetDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (Input.GetButtonDown("Dash"))
         {
@@ -43,6 +42,6 @@ public class PlayerFish : FishMovementBase
     protected virtual void Dash()
     {
         doDash = false;
-        rbody.velocity = lastVelocityDirection * dashSpeed;
+        rbody.velocity = Vector2.up * dashSpeed;
     }
 }
