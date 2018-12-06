@@ -11,7 +11,6 @@ public abstract class FishMovementBase : MonoBehaviour
     protected Vector2 targetDirection;
     public float acceleration = 24f;
     public float deceleration = 64f;
-    public float dashSpeed = 64f;
     public float maxSpeed = 8f;
 
     public float rotationSpeed = 720f;

@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerFish : FishMovementBase
 {
     private bool doDash;
+    private bool canDash = true;
+    public float dashSpeed = 64f;
+    public float dashCooldown = 1.4f;
 
     protected override void UpdateTargetDirection()
     {
         targetDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && canDash)
         {
             doDash = true;
         }
@@ -42,6 +45,21 @@ public class PlayerFish : FishMovementBase
     protected virtual void Dash()
     {
         doDash = false;
-        rbody.velocity = Vector2.up * dashSpeed;
+        canDash = false;
+        rbody.velocity = lastVelocityDirection * dashSpeed;
+        StartCoroutine(DashCooldown());
+    }
+
+    public float dashReadyPercent = 1f;
+    private IEnumerator DashCooldown()
+    {
+        float tick = 0;
+        while (tick < dashCooldown)
+        {
+            tick += Time.deltaTime;
+            dashReadyPercent = Mathf.Clamp01(tick / dashCooldown);
+            yield return null;
+        }
+        canDash = true;
     }
 }
